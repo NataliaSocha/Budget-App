@@ -1,0 +1,155 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.hide{
+    display: none;
+    
+}
+.error{
+    color: rgb(245, 80, 80);
+    padding: 0.2em;
+    font-size: 13px;
+    margin-bottom: 15px;
+    font-weight: 600 ;
+}
+.expenses ul {
+    /*list-style-type: "*";  */
+    list-style-image: url('/List/carts.png' );
+   
+}
+.incomes ul {
+    list-style-image: url('/List/money-bag.png' );
+    
+}
+li {
+    display: list-item;
+     /*   display: flex; list style type nie dziala*/
+    color: #5c5a5a;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;  
+    padding-left: 5px;
+    margin-left: 35px;
+
+}
+
+body{
+    background-image: url(background/budget\ app.png);
+    background-size: cover;
+}
+.wrapper{
+    width: 100%;
+    font-size: 19px;
+    max-width: 700px;
+    margin: 25px;
+    margin-top: 50px;
+}
+.wrapper h3{
+    color: #5c5a5a;
+    font-weight: 600;
+    margin-bottom: 13px;
+}
+.container{
+    width: 100%;
+}
+.sub-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 2fr 2fr ;
+    gap: 30px;      
+}
+.output-container{
+    display: flex ;
+    align-items: center;
+}
+.container input{
+    width: 80%;
+    padding: 5px;
+    border: 1px solid rgb(230, 214, 115);
+    border-radius: 5px;
+    color: rgb(63, 62, 62);
+    font-weight: 450;
+    outline: none;
+    margin-top: 10px;
+}
+.container input:focus{
+    border-color: rgb(140, 181, 209);
+}
+.user-income-container{
+    background-color: rgb(238, 236, 236);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgb(76, 75, 75);
+    
+}
+.user-expenses-amount-container{
+    background-color: rgb(253, 222, 249);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgb(76, 76, 75);
+}
+
+.output-container{
+    background-color: #f0f8c1;
+    color:  rgb(63, 62, 62);
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 25px;
+    width: 450px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgb(68, 68, 3);
+    margin-top: 30px;
+    margin-left: 130px;
+}
+.image{
+   background-image: url(/List/saving.png);
+   background-repeat: no-repeat;
+   background-size: 55px 55px;
+   padding-left: 100px;   
+}
+/*.output-container span*/
+.submit{
+    background-color: rgb(248, 117, 231);
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 5px;
+    color: white ;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+    display: block;
+    margin-top: 13px;
+    outline: none;
+}
+.edit-button,
+.remove-button,
+.save-button {
+    background-color: rgb(128, 192, 135);
+    font-size: 11px;
+    padding: 5px;
+    color: white ;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-left: 15px; 
+    width: 41px;
+    height: 22px;
+}
+.remove-button {
+    background-color: rgb(160, 91, 91);
+}
+.save-button{
+    background-color: rgb(128, 192, 135);
+}
+#amount{
+    color: rgb(63, 62, 62);
+}
+.summary2,
+.summary{
+    color: #5c5a5a;
+}
