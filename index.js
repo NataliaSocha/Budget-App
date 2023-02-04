@@ -51,19 +51,32 @@ function createError(inputAmount, inputTitle, errorMessage) {
   }
   return false;
 }
+function createErrorEditInputs(editInputValue, editInput, errorMessage) {
+  if (
+    editInputValue.value === "" ||
+    editInputValue.value <= "0 zł" ||
+    editInput.value === ""
+  ) {
+    errorMessage.classList.remove("hide");
+    inputAmount.value = "";
+    return true;
+  }
+  return false;
+}
+
 function hiddenElements(
   buttonSave,
   buttonEdit,
   editInput,
   editInputValue,
-  AmountAndInput,
+  amountAndInput,
   buttonRemove
 ) {
   buttonSave.hidden = true;
   buttonEdit.hidden = false;
   editInput.hidden = true;
   editInputValue.hidden = true;
-  AmountAndInput.hidden = false;
+  amountAndInput.hidden = false;
   buttonRemove.hidden = false;
 }
 function createObj(li, inputIncome, incomeAmount, type) {
@@ -111,19 +124,24 @@ function createEditInputs(li, divRow, amountAndInput, buttonRemove, editObj) {
     li.appendChild(buttonRemove);
 
     buttonSave.addEventListener("click", () => {
-      hiddenElements(
-        buttonSave,
-        buttonEdit,
-        editInput,
-        editInputValue,
-        amountAndInput,
-        buttonRemove
-      );
-      amountAndInput.innerHTML = `${editInput.value} ${editInputValue.value}`;
-      editObj.name = editInput.value;
-      editObj.amount = parseInt(editInputValue.value);
-      summaryAmountTotal();
-      budgetTotalUserText();
+      if (
+        createErrorEditInputs(editInputValue, editInput, errorMessage) === false
+      ) {
+        errorMessage.classList.add("hide");
+        hiddenElements(
+          buttonSave,
+          buttonEdit,
+          editInput,
+          editInputValue,
+          amountAndInput,
+          buttonRemove
+        );
+        amountAndInput.innerHTML = `${editInput.value} ${editInputValue.value}`;
+        editObj.name = editInput.value;
+        editObj.amount = parseInt(editInputValue.value);
+        summaryAmountTotal();
+        budgetTotalUserText();
+      }
     });
   });
   return buttonEdit;
@@ -167,7 +185,7 @@ buttonAddIncome.addEventListener("click", (event) => {
     divIncomeRow.appendChild(incomeAmountAndInput);
     li.appendChild(divIncomeRow);
 
-    let buttonRemove = createButton("remove-button", "usun", li.id);
+    const buttonRemove = createButton("remove-button", "usun", li.id);
     const buttonEdit = createEditInputs(
       li,
       divIncomeRow,
@@ -196,7 +214,7 @@ buttonAddIncome.addEventListener("click", (event) => {
 /*---------------------------------Expenses---------------------------------*/
 buttonAddExpenses.addEventListener("click", (event) => {
   event.preventDefault();
-  let li = document.createElement("li");
+  let li = document.createElement("li"); // jak tu const to nie wyswietli sie
   if (
     createError(inputExpensesAmount, inputExpensesTitle, errorMessage2) ===
     false
@@ -219,7 +237,9 @@ buttonAddExpenses.addEventListener("click", (event) => {
     divExpensesRow.appendChild(expensesAmountAndInput);
     li.appendChild(divExpensesRow);
 
-    let buttonRemove = createButton("remove-button", "usun", li.id);
+    const buttonRemove = createButton("remove-button", "usun", li.id);
+
+    errorMessage.classList.add("hide");
     const buttonEdit = createEditInputs(
       li,
       divExpensesRow,

@@ -17,11 +17,11 @@
 }
 .expenses ul {
     /*list-style-type: "*";  */
-    list-style-image: url('/List/carts.png' );
+    list-style-image: url('/image/carts.png' );
    
 }
 .incomes ul {
-    list-style-image: url('/List/money-bag.png' );
+    list-style-image: url('/image/money-bag.png' );
     
 }
 li {
@@ -37,7 +37,7 @@ li {
 }
 
 body{
-    background-image: url(background/budget\ app.png);
+    background-image: url(image/budget\ app.png);
     background-size: cover;
 }
 .wrapper{
@@ -106,7 +106,7 @@ body{
     margin-left: 130px;
 }
 .image{
-   background-image: url(/List/saving.png);
+   background-image: url(/image/saving.png);
    background-repeat: no-repeat;
    background-size: 55px 55px;
    padding-left: 100px;   
