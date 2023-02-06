@@ -103,9 +103,16 @@ function summaryAmountTotal() {
   summaryExpenses.innerHTML = `${addAmountExpenses}  zł`;
   budgetTotal.innerHTML = addAmountIncome - addAmountExpenses;
 }
-function createEditInputs(li, divRow, amountAndInput, buttonRemove, editObj) {
-  let buttonEdit = createButton("edit-button", "edytuj", li.id);
 
+function createEditInputs(
+  li,
+  divRow,
+  amountAndInput,
+  buttonRemove,
+  editObj,
+  errorMessage
+) {
+  let buttonEdit = createButton("edit-button", "edytuj", li.id);
   buttonEdit.addEventListener("click", () => {
     const editInput = document.createElement("input");
     const editInputValue = document.createElement("input");
@@ -191,7 +198,8 @@ buttonAddIncome.addEventListener("click", (event) => {
       divIncomeRow,
       incomeAmountAndInput,
       buttonRemove,
-      incomeObj
+      incomeObj,
+      errorMessage
     );
 
     li = addButtonsToLi(li, buttonEdit, buttonRemove);
@@ -245,7 +253,8 @@ buttonAddExpenses.addEventListener("click", (event) => {
       divExpensesRow,
       expensesAmountAndInput,
       buttonRemove,
-      expensesObj
+      expensesObj,
+      errorMessage2
     );
     li = addButtonsToLi(li, buttonEdit, buttonRemove);
     expensesList.appendChild(li);
