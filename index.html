@@ -1,64 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Budget App</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="container">
-        <div class="sub-container">
-          <!--przychody-->
-          <section class="incomeAll">
-            <div class="user-income-container">
-              <h3>Przychody</h3>
-              <p class="hide error" id="budget-error">
-                wartosc nie moze byc pusta lub ujemna
-              </p>
-              <input
-                type="text"
-                class="income-title"
-                id="income-title"
-                placeholder="wpisz Twoj przychod"
-              />
-              <input type="number" id="user-income" placeholder="podaj kwote" />
-              <button class="submit" id="income-button">dodaj kwote</button>
-              <div class="incomes" id="incomes">
-                <ul class="income-list" id="income-list"></ul>
-              </div>
-              <p class="summary" id="summary">0 zł.</p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Budget App</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="sub-container">
+        <!--przychody-->
+        <section class="incomeAll">
+          <div class="user-income-container">
+            <h3>Przychody</h3>
+            <p class="hide error" id="budget-error">
+              wartosc nie moze byc pusta lub ujemna
+            </p>
+            <input type="text" class="income-title" id="income-title" placeholder="wpisz Twoj przychod" />
+            <input type="number" id="user-income" placeholder="podaj kwote" />
+            <button class="submit" id="income-button">dodaj kwote</button>
+            <div class="incomes" id="incomes">
+              <ul class="income-list" id="income-list"></ul>
             </div>
-          </section>
-          <!--wydatki-->
-          <section class="expensesAll">
-            <div class="user-expenses-amount-container">
-              <h3>Wydatki</h3>
-              <p class="hide error" id="expenses-title-error">
-                wartosc nie moze byc pusta lub ujemna
-              </p>
-              <input
-                type="text"
-                class="expenses-title"
-                id="expenses-title"
-                placeholder="wpisz Twoj wydatek"
-              />
-              <input
-                type="number"
-                id="user-expenses-amount"
-                placeholder="wpisz koszt wydatku"
-              />
-              <button class="submit" id="expenses-button">dodaj kwote</button>
-              <div class="expenses" id="expenses">
-                <ul class="expenses-list" id="expenses-list"></ul>
-              </div>
-              <p class="summary2" id="summary2">0 zł.</p>
+            <p class="summary" id="summary">0 zł.</p>
+          </div>
+        </section>
+        <!--wydatki-->
+        <section class="expensesAll">
+          <div class="user-expenses-amount-container">
+            <h3>Wydatki</h3>
+            <p class="hide error" id="expenses-title-error">
+              wartosc nie moze byc pusta lub ujemna
+            </p>
+            <input type="text" class="expenses-title" id="expenses-title" placeholder="wpisz Twoj wydatek" />
+            <input type="number" id="user-expenses-amount" placeholder="wpisz koszt wydatku" />
+            <button class="submit" id="expenses-button">dodaj kwote</button>
+            <div class="expenses" id="expenses">
+              <ul class="expenses-list" id="expenses-list"></ul>
             </div>
-          </section>
-        </div>
-        <!--Budzet łącznie-->
+            <p class="summary2" id="summary2">0 zł.</p>
+          </div>
+        </section>
+      </div>
+      <!--Budzet łącznie-->
+      <div class="output">
         <div class="output-container image">
           <div>
             <p>Budzet łącznie:</p>
@@ -67,6 +56,8 @@
         </div>
       </div>
     </div>
-    <script src="index.js"></script>
-  </body>
+  </div>
+  <script src="index.js"></script>
+</body>
+
 </html>
